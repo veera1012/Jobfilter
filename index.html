@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings with Filtering</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Job Listings</h1>
+        <div class="filters">
+            <select id="locationFilter">
+                <option value="">Select Location</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Trivandram">Trivandram</option>
+                <option value="Kochi">Kochi</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Pondicherry">Pondicherry</option>
+                <option value="Coimabatore">Coimabatore</option>
+                <option value="Madurai">Madurai</option>
+            </select>
+            <select id="typeFilter">
+                <option value="">Select Job Type</option>
+                <option value="Full-time">Full-time</option>
+                <option value="Part-time">Part-time</option>
+                <option value="Contract">Contract</option>
+            </select>
+        </div>
+        <div class="add-job">
+            <h2>Add New Job</h2>
+            <form id="addJobForm">
+                <input type="text" id="jobTitle" placeholder="Job Title" required>
+                <input type="text" id="jobLocation" placeholder="Job Location" required>
+                <select id="jobType" required>
+                    <option value="">Select Job Type</option>
+                    <option value="Full-time">Full-time</option>
+                    <option value="Part-time">Part-time</option>
+                    <option value="Contract">Contract</option>
+                </select>
+                <button type="submit">Add Job</button>
+            </form>
+        </div>
+        <div id="jobListings" class="job-listings">
+        
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
