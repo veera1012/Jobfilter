@@ -10,10 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
         { title: 'Data Analyst', location: 'Pondicherry', type: 'Contract' },
         { title: 'Web Developer', location: 'coimbatore', type: 'Full-time' }
     ];
-     const jobListingsContainer = document.getElementById('jobListings');
+    const jobListingsContainer = document.getElementById('jobListings');
     const locationFilter = document.getElementById('locationFilter');
     const typeFilter = document.getElementById('typeFilter');
-    const searchFilter = document.getElementById('searchFilter');
     const addJobForm = document.getElementById('addJobForm');
     const jobTitleInput = document.getElementById('jobTitle');
     const jobLocationInput = document.getElementById('jobLocation');
@@ -36,14 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function filterJobs() {
         const location = locationFilter.value;
         const type = typeFilter.value.toLowerCase();
-        const searchTerm = searchFilter.value.toLowerCase();
 
         const filteredJobs = jobListings.filter(job => {
             const matchesLocation = location === '' || job.location === location;
             const matchesType = type === '' || job.type.toLowerCase() === type;
-            const matchesSearch = searchTerm === '' || job.title.toLowerCase().includes(searchTerm);
 
-            return matchesLocation && matchesType && matchesSearch;
+            return matchesLocation && matchesType;
         });
 
         displayJobs(filteredJobs);
@@ -63,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     locationFilter.addEventListener('change', filterJobs);
     typeFilter.addEventListener('change', filterJobs);
-    searchFilter.addEventListener('input', filterJobs); // Listen for input changes in the search field
     addJobForm.addEventListener('submit', addJob);
 
     displayJobs(jobListings);
