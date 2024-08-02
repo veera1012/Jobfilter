@@ -1,4 +1,4 @@
-/* styles.css */
+
 
 body {
     font-family: Arial, sans-serif;
@@ -82,4 +82,11 @@ h1, h2 {
 
 .job-card p {
     margin: 10px 0;
+}
+.filters input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 48%;
 }
